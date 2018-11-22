@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block title %}Dashboard{% endblock %}
+
+{% block content %}
+
+{% include 'menu.html' %}
+
+<section class="content-admin">
+
+	<!-- Barra de Search -->
+	<section class="box-search">
+		<input type="text" class="search-contact" placeholder="Search...">
+	</section>
+
+	<!-- Contacts -->			
+	<section class="sec-contacts">
+		
+		{% for contact in contacts_desc %}			
+		<a href="{{ url_for('contacts.update', id=contact.id) }}">
+		<article class="contact">
+			<img src="{{ url_for('static', filename='imgs/user-m.png') }}" class="img-user" alt="">
+			<main>
+				<h6>{{ contact.name }} {{ contact.surname }}</h6>
+				<p>{{ contact.email }}</p>
+				<p>{{ contact.num }}</p>
+				<a href="{{ url_for('contacts.delete', id=contact.id) }}"><i class="fa fa-trash icon-danger"></i></a>
+			</main>
+		</article>					
+		</a>
+		{% endfor %}
+	</section>
+	
+
+</section>
+
+{% endblock %}

@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block title %}Register{% endblock %}
+
+{% block content %}
+{# {% for message in get_flashed_messages() %}
+<div class="error">{{ message }}</div>
+{% endfor %} #}
+<div class="box-login">
+	<h3 class="title">FunnyContacts</h3>
+	
+	<form action="" method="POST">
+		<label for="pass">Password</label>
+		<input type="password" name="password" id="pass" autofocus required>
+		
+		<label for="cpass">Confirm password</label>
+		<input type="password" id="cpass" name="cpass">
+		<button>Create password</button>
+	</form>	
+	
+</div>
+{% endblock %}

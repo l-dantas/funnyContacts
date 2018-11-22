@@ -1,0 +1,29 @@
+
+
+.btn {
+	margin: 10px 0;
+	border: none;
+	border-radius: 5px;
+	padding: 5px 20px;
+	color: white;
+	cursor: pointer;
+}
+.btn:hover {
+	background-color: #C6C6C6;
+}
+
+.btn-success {
+	background-color: var(--main-green);
+	transition: all .1s ease-in-out .1s;
+}
+.btn-success:hover { background-color: #74B377; }
+
+.btn-danger { 
+	background-color: var(--danger); 
+	transition: all .1s ease-in-out .1s;
+ }
+.btn-danger:hover { background-color: #c53240;  }
+
+
+.icon-danger-static { color: var(--danger) !important; }
+.icon-danger:hover { color: var(--danger) !important; }

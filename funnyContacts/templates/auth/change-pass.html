@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% include 'menu.html' %}
+
+<section class="content-admin">
+	
+	<!-- área para criar um contato -->
+	<section class="new-contact">
+		<header>
+			<h3>{% block title %}Change password{% endblock %}</h3>
+			<p>Don't forget! :)</p>
+		</header>
+
+		<form action="" method="POST">
+			<label for="old-pass">Old password:</label>
+			<input type="password" name="old_password" id="old-pass" required>
+			
+			<label for="new-pass">New password:</label>
+			<input type="password" name="new_password" id="new-pass" required>
+
+			<label for="c-new-pass">Confirm new password:</label>
+			<input type="password" name="c_new_password" id="c-new-pass" required>
+
+			<button class="btn btn-success">Save</button>
+		</form>
+	</section>
+
+</section>	
+
+{% endblock %}

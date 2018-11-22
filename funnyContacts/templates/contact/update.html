@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+
+
+{% block content %}
+
+{% include 'menu.html' %}
+
+<section class="content-admin">
+	
+	<!-- área para criar um contato -->
+	<section class="new-contact">
+		<header>
+			<h3>{% block title %}Update Contact{% endblock %}</h3>
+			<p>{{ contact.name }} {{ contact.surname }}</p>
+		</header>
+
+		<form action="" method="POST">
+			<label for="name">Name</label>
+			<input type="text" name="name" id="name" value="{{ contact.name }}" required>
+			
+			<label for="surname">Surname</label>
+			<input type="text" name="surname" id="surname" value="{{ contact.surname }}">
+
+			<label for="email">E-mail</label>
+			<input type="email" name="email" id="email" value="{{ contact.email }}">
+
+			<label for="contact">Contact</label>
+			<input type="text" name="number" id="contact" value="{{ contact.num }}" required>
+
+			<button class="btn btn-success">Save</button>
+			<a href="{{ url_for('contacts.delete', id=contact.id) }}" class="btn btn-danger">Delete</a>
+		</form>
+	</section>
+
+</section>	
+
+{% endblock %}

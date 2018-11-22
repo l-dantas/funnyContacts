@@ -1,0 +1,106 @@
+.container-admin {
+	display: flex;
+}
+/*nav lateral*/
+.nav-side {
+	width: 14.6413%;
+	height: 100vh;
+	padding: 10px;
+	display: flex;
+	flex-flow: column wrap;
+	align-items: center;
+	box-shadow: 5px 0 10px #00000020;
+	position: fixed;
+
+	background-color: #2E2E2E ;
+}
+.nav-side h3 {
+	color: white;
+	font-family: 'Oleo Script', cursive;
+
+	margin-bottom: 20px;
+}
+.nav-side h3:hover {
+	color: gray;
+}
+.nav-side i, .nav-side a {
+	color: white;
+}
+.nav-side a:hover > i, .nav-side a:hover {
+	color: gray;
+}
+.nav-side ul li {
+	padding: 10px;
+}
+
+/* content ADMIN */
+.content-admin {
+	/*border: 1px solid red;*/
+	width: 85.3587%;
+	padding: 1% 2%;
+	margin-left: 14.6413%;
+}
+
+/* Área de pesquisa */
+.box-search {
+	/*border: 1px solid red;*/
+	width: 100%;
+	padding: 0 2%;
+	display: flex;
+	justify-content: center;
+}
+.box-search input {
+	text-align: center;
+	width: 80%;
+	padding: 9px;
+	border: 1px solid #00000020;
+	border-radius: 50px;
+	transition: all .1s ease-in-out .1s;
+}
+.box-search input:hover, .box-search input:focus {
+	box-shadow: 2px 2px 5px #00000020;
+}
+
+/*style contacts*/
+.sec-contacts {
+	display: flex;
+	flex-flow: row wrap;
+
+}
+.contact {
+	width: 140px;
+	height: 140px;
+
+	margin: 2% 1%;
+	padding: 15px;
+	background: linear-gradient(to top, #4DD0E1, #11606A);
+	border-radius: 5%;
+	
+	display: flex;
+	flex-flow: row wrap;
+	align-items: center;
+	
+	transition: all .1s ease-in-out .1s;
+
+}
+.contact:hover {
+	box-shadow: 3px 3px 7px #00000040;
+	/*width: 170px;*/
+	height: 265px;
+}
+.img-user {
+	width: 100%;
+	transition: all .1s ease-in-out .1s;
+}
+.contact p, .contact h6, .contact i {
+	color: white;
+	text-align: center;
+	margin: 5px;
+}
+.contact > main {
+	width: 100%;
+
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: center;
+}

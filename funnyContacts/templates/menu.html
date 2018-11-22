@@ -1,0 +1,36 @@
+<nav class="nav-side">
+	<a href="{{ url_for('index')}}" class="">
+		<h3 class="logotipo-admin">FunnyContacts</h3>
+	</a>
+	<ul class="menu-icons">
+		<li>
+			<a href="{{ url_for('contacts.create') }}">
+				<i class="fas fa-plus"></i>
+				Add Contact
+			</a>
+		</li>
+		<li>
+			<a class="btn-sort">
+				<i class="fas fa-sort"></i>
+				Sort
+			</a>
+			<ul class="links-sort">
+				<li>Recently</li>
+				<li><a class="sort-AZ">A-Z</a></li>
+				<li>Z-A</li>
+			</ul>
+		</li>
+		<li>
+			<a href="{{ url_for('auth.change_pass') }}">
+				<i class="fas fa-key"></i>
+				Change password
+			</a>
+		</li>
+		<li >
+			<a href="{{ url_for('auth.logout') }}"  class="icon-danger-static">
+				<i class="fas fa-sign-out-alt icon-danger-static"></i>
+				Exit
+			</a>
+		</li>
+	</ul>
+</nav>
