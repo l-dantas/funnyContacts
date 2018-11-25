@@ -9,11 +9,16 @@ from funnyContacts.db import get_db
 
 bp = Blueprint('contacts', __name__)
 
-@bp.route('/')
+@bp.route('/', methods=('GET', 'POST'))
 @login_required
 def index():
 	db = get_db()
-	contactsDESC = db.execute(
+
+	contacts = None
+	contactsASC = None
+	contactsDESC = None
+
+	contactsRecently = db.execute(
 		'''
 		SELECT c.id, create_date, user_id, name, surname, email, num
 		FROM contact c JOIN user u ON c.user_id = u.id
@@ -21,15 +26,29 @@ def index():
 		'''
 	).fetchall()
 
-	contactsASC = db.execute(
-		'''
-		SELECT c.id, create_date, user_id, name, surname, email, num
-		FROM contact c JOIN user u ON c.user_id = u.id
-		ORDER BY create_date ASC
-		'''
-	).fetchall()
 
-	return render_template('contact/index.html', contacts_desc=contactsDESC, contacts_asc=contactsASC )
+# testando as posibilidades
+	if(request.method == 'POST'):
+		print('Houve um POST')		
+
+		contactsASC = db.execute(
+			'''
+			SELECT c.id, create_date, user_id, name, surname, email, num
+			FROM contact c JOIN user u ON c.user_id = u.id
+			ORDER BY name ASC
+			'''
+		).fetchall()
+
+		contactsDESC = db.execute(
+			'''
+			SELECT c.id, create_date, user_id, name, surname, email, num
+			FROM contact c JOIN user u ON c.user_id = u.id
+			ORDER BY name DESC
+			'''
+		).fetchall()
+
+	contacts = contactsRecently
+	return render_template('contact/index.html', contacts=contacts)
 
 
 @bp.route('/create', methods=('GET', 'POST'))

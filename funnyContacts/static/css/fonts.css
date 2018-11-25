@@ -3,9 +3,10 @@
 font-family: 'Open Sans', sans-serif;
 font-family: 'Oleo Script', cursive;
 */
+
 @font-face {
 	font-family: 'Open Sans';
-	src: url('../fonts/OpenSans-Regular.ttf') format("truetype");
+	src: url('../fonts/OpenSans-Regular.ttf') format('truetype');
 }
 
 @font-face {
